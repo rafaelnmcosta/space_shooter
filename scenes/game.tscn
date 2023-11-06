@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://borqrcvph3vc1"]
+[gd_scene load_steps=5 format=3 uid="uid://borqrcvph3vc1"]
 
 [ext_resource type="PackedScene" uid="uid://b4ivgos0w0uin" path="res://scenes/player.tscn" id="1_bv6cn"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_mssxk"]
 [ext_resource type="PackedScene" uid="uid://b3mf2ysdqh8nu" path="res://scenes/enemy.tscn" id="2_e1jt5"]
+[ext_resource type="PackedScene" uid="uid://bhmk5tc31hfyo" path="res://scenes/spawn_container.tscn" id="3_rwvcb"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_mssxk")
 
 [node name="Player" parent="." instance=ExtResource("1_bv6cn")]
 position = Vector2(115, 337)
 
 [node name="Enemy" parent="." instance=ExtResource("2_e1jt5")]
 position = Vector2(1028, 318)
+
+[node name="SpawnContainer" parent="." instance=ExtResource("3_rwvcb")]
+
+[connection signal="spawn_enemy" from="SpawnContainer" to="." method="_on_spawn_container_spawn_enemy"]
