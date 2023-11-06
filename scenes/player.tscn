@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4ivgos0w0uin"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_usj23"]
+[ext_resource type="Texture2D" uid="uid://c3yo3fvnyqb1u" path="res://assets/png/playerShip2_green.png" id="2_tlael"]
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_usj23")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_tlael")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(-2.00014, -38, -11.0001, -18, -56, 6.0002, -38.9999, 34.0001, -16.9999, 30.0001, -11.9999, 38, 11.0001, 38, 17.0001, 28.9999, 37.0001, 34.9999, 56, 5.9998, 11.9999, -17, 2.99987, -37)
+
+[node name="LaserContainer" type="Node" parent="."]
